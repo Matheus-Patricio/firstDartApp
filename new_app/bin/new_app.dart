@@ -20,7 +20,7 @@ class Spacecraft {
 }
 */
 
-void main(List<String> arguments, Iterable<int> planets) {
+void main(List<String> arguments) {
   print('hello world!');
   var planetGasType = 'Gas';
   var planetRockType = 'Rock';
@@ -35,11 +35,13 @@ void main(List<String> arguments, Iterable<int> planets) {
     7: 'Uranus',
     8: 'Neptune'
   };
-  for (var i = 0; i < planets.length; i++) {
-    planets.forEach((key, value) {
-      if (key >= 1 && key <= 4) {
-        print('planet:$planets[i], type:$planetRockType');
-      }
-    });
-  }
+
+  planets.forEach((key, value) {
+     if (key <= 4) {
+        print('planet:${planets[key]}, type:${planetRockType}');
+      } else {
+        print('planet:${planets[key]}, type:${planetGasType}');
+      } 
+    }
+  );
 }
